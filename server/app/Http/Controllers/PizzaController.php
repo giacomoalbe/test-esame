@@ -4,11 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Pizza;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class PizzaController extends Controller
 {
-    public function list() {
-        return Pizza::all();
+    public function list(Request $req) {
+        $sortMethod = "asc";
+
+        if ($req->query("sort") != null) {
+            $sortMethod = $req->query("sort");
+        }
+
+        return Pizza::orderBy("price", $sortMethod)->get();
     }
 
     public function detail($id) {

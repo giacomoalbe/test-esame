@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center p-3 bg-red-200">
-    <div @click="goToList()">
+    <div @click="goToList()" class="cursor-pointer">
       <span class="text-white"> Hot </span>
       <span class="text-red-900 font-bold"> Slice </span>
     </div>

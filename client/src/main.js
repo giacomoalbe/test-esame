@@ -3,6 +3,7 @@ import App from './App.vue'
 
 import ListPizzas from '@/components/ListPizzas.vue';
 import CreatePizza from '@/components/CreatePizza.vue';
+import ViewPizza from '@/components/ViewPizza.vue';
 
 import VueRouter from 'vue-router';
 
@@ -23,6 +24,11 @@ const routes = [
     path: '/edit/:id',
     name: 'edit_pizza',
     component: CreatePizza
+  },
+  {
+    path: '/view/:id',
+    name: 'view_pizza',
+    component: ViewPizza
   },
   {
     path: '',
